@@ -1,34 +1,28 @@
 Toolbox overview
 ================
 
-- fatigue_tools: Fatigue calculation, rainflow counting binned on amplitude (and mean)
-- gtsdf: General Time Series Data Format. Data format for time series based on the binary hdf5
-- Hawc2:
-    - ascii2bin: Converting HAWC2 ascii files into the HAWC2 binary format
-    - hawc2io: Script for reading and writing Hawc2 result files
-    - cmp_test_cases: script to compare release test load cases
-    - dlc: scripts for generating htc files from highlevel dlc input
-    - IO scripts for HAWC2 input/output files: htc, Aerodynamic, structure, at-time, shear, .sel
-    - auto generation of htc files
-    - cluster simulation
-- Signal processing:
-    - Sonic spikes removal
-    - Find time shift in signal
-    - rainflow counting
-- Wind:
+base package
+------------
+
+- rainflow counting (generally applicable, move further upstream in to scipy?)
+- fatigue_tools: Fatigue calculation, rainflow counting binned on amplitude (and mean). Based on cases, rainflow counting, and corresponding distribution of hours: calculate an equivalent load
+- signal processing (sonic spikes, find time shift) (Mads)
+- euler geomotry, rad2deg, rpm2rads, deg_mean, deg_std (Mads)
+- DLC definitions:
+    - highlevel: Script for reading highlevel code independent pre- and postprocessing input (xlsx-workbook)
+- wind (might move to a separate one if it gets bigger?)
     - turbulence
         - Mann parameters estimation
-    - wsp_dir2uv, wsp_dir_tilt2uvw        
-- dlc
-    - highlevel: Script for reading highlevel code independent pre- and postprocessing input (xlsx-workbook)
-    
+    - wsp_dir2uv, wsp_dir_tilt2uvw    
+- gtsdf (Mads): General Time Series Data Format. Data format for time series based on the binary hdf5. Is there a specific reason why not using pandas.timeseries and the h5 data store from pandas?
+- general torque/pbs cluster tools (David)
 
-- Euler geometry
-- rad2deg
-- rpm2rads
-- deg_mean, deg_std
+HAWC2
+-----
 
-    
-    
-
-
+- ascii2bin: Converting HAWC2 ascii files into the HAWC2 binary format
+- hawc2io: Script for reading and writing Hawc2 result files
+- cmp_test_cases: script to compare release test load cases
+- dlc: scripts for generating htc files from highlevel dlc input
+- IO scripts for HAWC2 input/output files: htc, Aerodynamic, structure, at-time, shear, .sel
+- run HAWC2 cases on Torque/PBS cluster
