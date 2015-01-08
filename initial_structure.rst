@@ -29,12 +29,14 @@ For inspiration, look at https://github.com/pydata/pandas
     |-- src
     |   |-- dlcgenerator
     |   |-- cluster
+    |   |-- control
     |   |-- gtsdf (General Time Series Data Format) (own module?)
     |   |-- signal (signal processing, see also scipy.signal)
     |   |   |-- rainflow counting
     |   |-- tools (engineering tools)
     |   |   |-- euler geomotry, rad2deg, rpm2rads, deg_mean, deg_std
     |   |   |-- fatigue
+    |   |   |-- damping tuning
     |   |-- wind (very general, not bound to HAWC2 formats)
     |   |-- wrappers (larger components should move into their own module)
     |   |   |-- hawc2
