@@ -1,8 +1,8 @@
 Toolbox overview
 ================
 
-base package
-------------
+base package: components
+------------------------
 
 - rainflow counting (generally applicable, move further upstream in to scipy?)
 - fatigue_tools: Fatigue calculation, rainflow counting binned on amplitude (and mean). Based on cases, rainflow counting, and corresponding distribution of hours: calculate an equivalent load
@@ -16,6 +16,30 @@ base package
     - wsp_dir2uv, wsp_dir_tilt2uvw    
 - gtsdf (Mads): General Time Series Data Format. Data format for time series based on the binary hdf5. Is there a specific reason why not using pandas.timeseries and the h5 data store from pandas?
 - general torque/pbs cluster tools (David)
+
+base package: folder structure
+------------------------------
+
+For inspiration, look at https://github.com/pydata/pandas
+
+::
+    |-- doc
+    |-- examples 
+    |-- src
+    |   |-- dlcgenerator
+    |   |-- cluster
+    |   |-- gtsdf (General Time Series Data Format) (own module?)
+    |   |-- signal (signal processing, see also scipy.signal)
+    |   |   |-- rainflow counting
+    |   |-- tools (engineering tools)
+    |   |   |-- euler geomotry, rad2deg, rpm2rads, deg_mean, deg_std
+    |   |   |-- fatigue
+    |   |-- wind (very general, not bound to HAWC2 formats)
+    |   |-- wrappers (larger components should move into their own module)
+    |   |   |-- hawc2
+    |   |   |-- becas
+    |   |   |-- hawcstab2
+
 
 HAWC2
 -----
