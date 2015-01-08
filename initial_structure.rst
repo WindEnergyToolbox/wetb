@@ -23,6 +23,7 @@ base package: folder structure
 For inspiration, look at https://github.com/pydata/pandas
 
 ::
+
     |-- doc
     |-- examples 
     |-- src
