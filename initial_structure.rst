@@ -32,7 +32,8 @@ For inspiration, look at https://github.com/pydata/pandas
     |   |-- control
     |   |-- gtsdf (General Time Series Data Format) (own module?)
     |   |-- signal (signal processing, see also scipy.signal)
-    |   |   |-- rainflow counting
+    |   |   |-- rainflow counting (1D or nD? If nD, same principle as numpy)
+    |   |   |-- statistics
     |   |-- tools (engineering tools)
     |   |   |-- euler geomotry, rad2deg, rpm2rads, deg_mean, deg_std
     |   |   |-- fatigue
@@ -44,6 +45,25 @@ For inspiration, look at https://github.com/pydata/pandas
     |   |   |-- hawcstab2
 
 
+Data structures and classes
+
+::
+
+    Case (model agnostic: HAWC2, BLADED, HawcStab2, FAST)
+    |-- model input: tag representation or a pre-defined variable tree?
+    |-- results
+    |-- calculate statistics
+    |-- rainflow counting
+    |-- calculate fatigue (1Hz equivalent load)
+
+    Cases
+    |-- Inherits from the Case class
+    |-- Is a collection of cases, in a DataFrame. How to set which columns (or searchable values from the Case data structure)? Note that these columns need to be user definable.
+    |-- Besides model inputs, also statistics and rainflow cycles should be part of it
+    |-- calculate fatigue lifetime
+    |-- 
+
+
 HAWC2
 -----
 
@@ -52,4 +72,5 @@ HAWC2
 - cmp_test_cases: script to compare release test load cases
 - dlc: scripts for generating htc files from highlevel dlc input
 - IO scripts for HAWC2 input/output files: htc, Aerodynamic, structure, at-time, shear, .sel
+- converters: results as Pandas DataFrame H5/CSV/FLEX/BLADED, turbulence formats: FLEX/FAST/BLADED
 - run HAWC2 cases on Torque/PBS cluster
