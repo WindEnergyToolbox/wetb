@@ -13,8 +13,8 @@ RUN apt-get update \
     python-dev \
     build-essential \
     python-numpy \
-    python-scipy \
     python-matplotlib \
+    python-scipy \
  && apt-get autoremove -y \
  && apt-get clean -y
 
