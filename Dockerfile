@@ -9,12 +9,12 @@ ENV SHELL /bin/bash
 RUN apt-get update \
  && apt-get install --fix-missing -y -q \
     git-all \
-    python-pip \
-    python-dev \
+    python3-pip \
+    python3-dev \
     build-essential \
-    python-numpy \
-    python-matplotlib \
-    python-scipy \
+    python3-numpy \
+    python3-matplotlib \
+    python3-scipy \
  && apt-get autoremove -y \
  && apt-get clean -y
 
