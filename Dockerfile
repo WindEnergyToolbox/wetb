@@ -15,6 +15,10 @@ RUN apt-get update \
     python3-numpy \
     python3-matplotlib \
     python3-scipy \
+    pip3 install -U setuptools \
  && apt-get autoremove -y \
  && apt-get clean -y
+ && git clone https://gitlab.windenergy.dtu.dk/toolbox/WindEnergyToolbox.git
+ && cd WindEnergyToolbox
+ && python3 setup.py -e .
 
