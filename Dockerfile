@@ -6,18 +6,13 @@ MAINTAINER Mads M. Pedersen <mmpe@dtu.dk>
 
 ENV SHELL /bin/bash
 
-RUN apt-get install -y language-pack-en
+RUN apt-get install -y 
 
-ENV LANGUAGE en_US.UTF-8
-ENV LANG en_US.UTF-8
-ENV LC_ALL en_US.UTF-8
 
-RUN locale-gen en_US.UTF-8
-
-RUN dpkg-reconfigure locales
 
 RUN apt-get update \
  && apt-get install --fix-missing -y -q \
+    language-pack-en
     git-all \
     python3-pip \
     python3-dev \
@@ -29,7 +24,12 @@ RUN apt-get update \
  && apt-get autoremove -y \
  && apt-get clean -y
  
+ENV LANGUAGE en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
 
+RUN locale-gen en_US.UTF-8
+RUN dpkg-reconfigure locales
  
 RUN pip3 install -U setuptools
 RUN git clone https://gitlab.windenergy.dtu.dk/toolbox/WindEnergyToolbox.git
