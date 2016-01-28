@@ -19,4 +19,5 @@ RUN apt-get update \
  && apt-get clean -y
  RUN pip3 install -U setuptools
  RUN git clone https://gitlab.windenergy.dtu.dk/toolbox/WindEnergyToolbox.git
+ RUN pip3 install -e ./WindEnergyToolbox
 
