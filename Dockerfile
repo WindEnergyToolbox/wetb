@@ -19,12 +19,10 @@ RUN apt-get update \
  && apt-get autoremove -y \
  && apt-get clean -y
  
-ENV LANGUAGE en_US.UTF-8
-ENV LANG en_US.UTF-8
-ENV LC_ALL en_US.UTF-8
+ENV LANG C.UTF-8
 
-RUN locale-gen en_US.UTF-8
-RUN dpkg-reconfigure locales
+#RUN locale-gen C.UTF-8
+#RUN dpkg-reconfigure locales
  
 RUN pip3 install -U setuptools
 RUN git clone https://gitlab.windenergy.dtu.dk/toolbox/WindEnergyToolbox.git
