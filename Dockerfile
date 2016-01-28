@@ -17,7 +17,7 @@ RUN apt-get update \
     python3-scipy \
  && apt-get autoremove -y \
  && apt-get clean -y
- echo RUN pip3 install -U setuptools
- echo RUN git clone https://gitlab.windenergy.dtu.dk/toolbox/WindEnergyToolbox.git
- echo RUN pip3 install -e ./WindEnergyToolbox
+ #RUN pip3 install -U setuptools
+ #RUN git clone https://gitlab.windenergy.dtu.dk/toolbox/WindEnergyToolbox.git
+ #RUN pip3 install -e ./WindEnergyToolbox
 
