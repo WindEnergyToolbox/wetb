@@ -7,6 +7,7 @@ MAINTAINER Mads M. Pedersen <mmpe@dtu.dk>
 ENV SHELL /bin/bash
 
 RUN apt-get install -y language-pack-en
+
 ENV LANGUAGE en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
@@ -29,7 +30,7 @@ RUN apt-get update \
  
 
  
- RUN pip3 install -U setuptools
- RUN git clone https://gitlab.windenergy.dtu.dk/toolbox/WindEnergyToolbox.git
- RUN pip3 install -e ./WindEnergyToolbox
+RUN pip3 install -U setuptools
+RUN git clone https://gitlab.windenergy.dtu.dk/toolbox/WindEnergyToolbox.git
+RUN pip3 install -e ./WindEnergyToolbox
 
