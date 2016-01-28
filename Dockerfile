@@ -12,7 +12,7 @@ RUN apt-get install -y
 
 RUN apt-get update \
  && apt-get install --fix-missing -y -q \
-    language-pack-en
+    language-pack-en \
     git-all \
     python3-pip \
     python3-dev \
