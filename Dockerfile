@@ -15,8 +15,15 @@ RUN apt-get update \
     python3-numpy \
     python3-matplotlib \
     python3-scipy \
+    locales \
  && apt-get autoremove -y \
  && apt-get clean -y
+ 
+ # Set the locale
+RUN locale-gen en_US.UTF-8  
+ENV LANG en_US.UTF-8  
+ENV LANGUAGE en_US:en  
+ENV LC_ALL en_US.UTF-8 
  
  RUN pip3 install -U setuptools
  RUN git clone https://gitlab.windenergy.dtu.dk/toolbox/WindEnergyToolbox.git
