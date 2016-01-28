@@ -17,4 +17,5 @@ RUN apt-get update \
     python3-scipy \
  && apt-get autoremove -y \
  && apt-get clean -y
+ RUN git clone https://gitlab.windenergy.dtu.dk/toolbox/WindEnergyToolbox.git
 
