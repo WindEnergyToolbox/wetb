@@ -16,7 +16,6 @@ RUN apt-get update \
     python3-numpy \
     python3-matplotlib \
     python3-scipy \
-    libhdf5-dev \
     locales \
  && apt-get autoremove -y \
  && apt-get clean -y
@@ -25,6 +24,8 @@ ENV LANG C.UTF-8
 
 #RUN locale-gen C.UTF-8
 #RUN dpkg-reconfigure locales
+
+RUN apt-get install -y libhdf5-dev
  
 RUN pip3 install -U setuptools
 RUN git clone https://gitlab.windenergy.dtu.dk/toolbox/WindEnergyToolbox.git
