@@ -15,7 +15,6 @@ RUN apt-get update \
     python3-numpy \
     python3-matplotlib \
     python3-scipy \
-    cython3 \
     locales \
  && apt-get autoremove -y \
  && apt-get clean -y
