@@ -16,6 +16,7 @@ RUN apt-get update \
     python3-numpy \
     python3-matplotlib \
     python3-scipy \
+    libhdf5-dev \
     locales \
  && apt-get autoremove -y \
  && apt-get clean -y
