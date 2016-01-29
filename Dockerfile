@@ -11,6 +11,7 @@ RUN apt-get update \
     git-all \
     python3-pip \
     python3-dev \
+    cython3 \
     build-essential \
     python3-numpy \
     python3-matplotlib \
