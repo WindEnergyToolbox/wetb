@@ -17,6 +17,8 @@ RUN apt-get update \
     python3-matplotlib \
     python3-scipy \
     locales \
+    python3-tables \
+    python3-pandas \
  && apt-get autoremove -y \
  && apt-get clean -y
 
