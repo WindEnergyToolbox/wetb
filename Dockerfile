@@ -32,6 +32,7 @@ ENV LANG C.UTF-8
  
 RUN pip3 install -U setuptools
 RUN pip3 install paramiko
+#RUN pip3 install psutil
 RUN git clone https://gitlab.windenergy.dtu.dk/toolbox/WindEnergyToolbox.git
 RUN pip3 install -e ./WindEnergyToolbox
 
