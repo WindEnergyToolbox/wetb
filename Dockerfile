@@ -21,7 +21,6 @@ RUN apt-get update \
     python3-h5py \
     python3-tables \
     python3-pandas \
-#    python3-psutil \
  && apt-get autoremove -y \
  && apt-get clean -y
 
