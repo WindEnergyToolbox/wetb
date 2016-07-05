@@ -23,7 +23,7 @@ RUN apt-get update \
     python3-pandas \
  && apt-get autoremove -y \
  && apt-get clean -y
-
+ 
 ENV LANG C.UTF-8
 
 #RUN locale-gen C.UTF-8
