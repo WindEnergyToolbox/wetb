@@ -21,7 +21,6 @@ RUN apt-get update \
     python3-h5py \
     python3-tables \
     python3-pandas \
-    python3-coverage \
  && apt-get autoremove -y \
  && apt-get clean -y
  
@@ -34,6 +33,7 @@ ENV LANG C.UTF-8
 RUN pip3 install -U setuptools
 RUN pip3 install paramiko
 RUN pip3 install psutil
+RUN pip3 install pytest-cov
 RUN git clone https://gitlab.windenergy.dtu.dk/toolbox/WindEnergyToolbox.git
 RUN pip3 install -e ./WindEnergyToolbox
 
